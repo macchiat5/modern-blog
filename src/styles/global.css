@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --text-main: #111827;
+  --text-secondary: #4b5563;
+}
+
+[data-theme="dark"] {
+  --background: #111827;
+  --text-main: #ffffff;
+  --text-secondary: #9ca3af;
+}
+
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+}
