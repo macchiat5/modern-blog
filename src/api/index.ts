@@ -15,12 +15,12 @@ api.use("*", cors());
 api.get("/health", (c) => c.json({ status: "ok" }));
 
 // Protected routes
-const protected = new Hono();
-protected.use("*", authMiddleware);
+const protectedRoutes = new Hono();
+protectedRoutes.use("*", authMiddleware);
 
-protected.route("/posts", posts);
-protected.route("/media", media);
+protectedRoutes.route("/posts", posts);
+protectedRoutes.route("/media", media);
 
-api.route("/api/v1", protected);
+api.route("/api/v1", protectedRoutes);
 
 export default api;

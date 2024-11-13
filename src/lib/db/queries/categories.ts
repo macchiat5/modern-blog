@@ -9,7 +9,7 @@ export const categoryQueries = {
   `),
 
   getAll: db.prepare(`
-    SELECT * FROM categories ORDER BY order_index ASC
+    SELECT * FROM categories ORDER BY parent_id, order_index ASC
   `),
 
   getById: db.prepare(`
